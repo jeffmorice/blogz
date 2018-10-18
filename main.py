@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 # configure it to connect to the database
 # user is build-a-blog, database is named build-a-blog, password is constructable
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://build-a-blog:constructable@localhost:8889/build-a-blog'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://blogz:xylophone@localhost:8889/blogz'
 app.config['SQLALCHEMY_ECHO'] = True
 # create a reference to database and its methods
 db = SQLAlchemy(app)
