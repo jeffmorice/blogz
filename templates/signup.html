@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+  <div class='center_vert'>
+    <div class="solid">
+      <h1> Sign Up </h1>
+    </div>
+    <div class="solid">
+      <form method='POST'>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <label for="username"> Username </label>
+                <span class="error">{{username_error}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input id="username" type='text' name='username' value={{u_candidate}}>
+              </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+              <td>
+                <label for="password"> Password </label>
+                <span class="error">{{password_error}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input id="password" type='password' name='password'>
+              </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+              <td>
+                <label for="password_verified"> Verify Password </label>
+                <span class="error">{{p_verification_error}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input id="password_verified" type='password' name='password_verified'>
+              </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+              <td>
+                <label for="email"> Email (optional) </label>
+                <span class="error">{{email_error}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input id="email" type='text' name='email' value={{e_candidate}}>
+              </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+              <td>
+                <br>
+                <input class="button" type='submit' value='Sign Up'>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
