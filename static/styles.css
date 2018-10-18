@@ -1,0 +1,125 @@
+body {
+  background-color: #7d2a40;
+  margin: 0px;
+  padding-top: 62px;
+}
+
+article {
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+
+  margin-top: 15px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 15px;
+
+  background-color: #f69b78;
+
+  /* border: 1px solid red; */
+  /*Include padding and border in the element's total width and height*/
+  box-sizing: border-box;
+}
+
+a:link, label {
+    color: #7d2a40;
+    text-decoration: underline;
+}
+
+/* visited link */
+a:visited {
+    color: #521826;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: #7c5357;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: #75581c;
+    text-decoration: none;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+p {
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+
+  margin: 0px;
+
+  /* border: 1px solid red; */
+  /*Include padding and border in the element's total width and height*/
+  box-sizing: border-box;
+  color: #7d2a40;
+  background-color: #fffac2;
+}
+
+input[type=text], textarea {
+  width: 100%;
+  background-color: #fffac2;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: #fffac2;
+}
+
+a, h3, p, input[type="text"], textarea, label {
+  font-family: "Verdana";
+}
+
+.error {
+  color: red;
+}
+
+.color1 {
+  color: #7d2a40;
+}
+
+#topbar {
+  height: 62px; /* Set the height of the topbar */
+  width: 100%; /* Full-height: remove this if you want "auto" width */
+  text-align: center;
+  padding-top: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 5px;
+
+  margin: 0px;
+
+  position: fixed; /* Fixed top bar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+  background-color: #c25655;
+  box-shadow: 0px 15px #7d2a40;
+}
+
+#topbar a {
+    float: left;
+    color: #fffac2;
+    text-align: center;
+    padding: 14px 16px;
+    margin-left: 5px;
+    text-decoration: none;
+    font-size: 17px;
+    border: 2px solid #7d2a40;
+    box-sizing: border-box;
+}
