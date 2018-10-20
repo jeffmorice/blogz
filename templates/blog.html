@@ -2,20 +2,34 @@
 
     {% block content %}
         <!-- <h1> Before for loop </h1> -->
-        {% for entry in entries %}
-            <!-- <h1> Inside for loop </h1> -->
+
+        {% if entries|length == 0 %}
+
+            <br>
+            <br>
             <article>
-                <div>
-
-                    <a href='/entry?q={{entry.id}}' >
-                      <h3>{{entry.title}}</h3>
-                    </a>
-
-                    <p>{{entry.body}}</p>
-                  
-                </div>
+            <h3> No entries yet. </h3>
             </article>
-            <!-- <hr> -->
-        {% endfor %}
+
+
+        {% else %}
+
+
+            {% for entry in entries %}
+                <!-- <h1> Inside for loop </h1> -->
+                <article>
+                    <div>
+
+                        <a href='/entry?q={{entry.id}}' >
+                          <h3>{{entry.title}}</h3>
+                        </a>
+
+                        <p>{{entry.body}}</p>
+
+                    </div>
+                </article>
+                <!-- <hr> -->
+            {% endfor %}
+        {% endif %}
         <!-- <h1> After for loop </h1> -->
     {% endblock %}
