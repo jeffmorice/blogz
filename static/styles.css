@@ -91,6 +91,22 @@ a, h3, p, input[type="text"], textarea, label {
   color: #7d2a40;
 }
 
+.solid {
+  background-color: #B8D8D8;
+  box-shadow: 10px 10px #4F6367;
+}
+
+.center_vert {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 510px;
+  height: 431px;
+}
+
 #topbar {
   height: 62px; /* Set the height of the topbar */
   width: 100%; /* Full-height: remove this if you want "auto" width */
