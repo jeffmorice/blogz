@@ -119,6 +119,10 @@ a, h3, p, input[type="text"], textarea, label {
   margin-left: 5px;
 }
 
+.postbody {
+ white-space: pre-wrap;
+}
+
 #topbar {
   height: 62px; /* Set the height of the topbar */
   width: 100%; /* Full-height: remove this if you want "auto" width */
