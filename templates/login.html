@@ -7,13 +7,23 @@
   <form action="/login" method="post">
       <table>
           <tr>
-              <td><label for="username">Username</label></td>
+              <td>
+                <label for="username">Username</label>
+                <span class="error">{{username_error}}</span>
+              </td>
+          </tr>
+          <tr>
               <td>
                   <input name="username" type="text" value="{{ username }}">
               </td>
           </tr>
           <tr>
-              <td><label for="password">Password</label></td>
+              <td>
+                <label for="password">Password</label>
+                <span class="error">{{password_error}}</span>
+              </td>
+          </tr>
+          <tr>
               <td>
                   <input name="password" type="password">
               </td>

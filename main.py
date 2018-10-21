@@ -161,20 +161,6 @@ def signup_validation():
     else:
         return [u_error, p_error, pv_error, e_error, u_candidate, e_candidate]
 
-    # # return errors or redirect if all input is valid
-    # if len(username_error + password_error + email_error + p_verification_error) == 0:
-    #     #if all input is valid, redirect
-    #     u_confirmed = u_candidate
-    #     return redirect("/welcome?user=" + u_confirmed)
-    # else:
-    #     return render_template('signup.html',
-    #     username_error=username_error,
-    #     password_error=password_error,
-    #     p_verification_error=p_verification_error,
-    #     email_error=email_error,
-    #     u_candidate=u_candidate,
-    #     e_candidate=e_candidate)
-
 # define your request handlers, one for each page
     # include any logic, say for validation or updating the database
     # return rendered templates or redirect. Don't forget to return!
@@ -262,6 +248,7 @@ def signup():
     if request.method == 'POST':
         user_data = signup_validation()
 
+        # redirect if all input is valid (len == 3)
         if len(user_data) == 3:
             # user data passed validation
             username = user_data[0]
@@ -294,6 +281,7 @@ def signup():
                 u_candidate=username,
                 e_candidate=email)
 
+        # return errors if data is invalid (len == 6)
         elif len(user_data) == 6:
             # user data failed validation
             return render_template('signup.html',
@@ -309,6 +297,9 @@ def signup():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
+    username_error = ''
+    password_error = ''
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -318,8 +309,14 @@ def login():
             flash("Logged in")
             return redirect('/newpost')
         else:
-            flash('User password incorrect, or user does not exist', 'error')
-            return render_template('login.html', username=username)
+            if not user:
+                username_error = 'User does not exist.'
+            elif user.password != password:
+                password_error = 'Password is incorrect.'
+            return render_template('login.html',
+            username=username,
+            username_error=username_error,
+            password_error=password_error)
 
     return render_template('login.html')
 
