@@ -7,14 +7,14 @@
   </head>
   <body>
     <div id='topbar'>
-      <a href="/blog" class="align_left" > Blog </a>
-      <a href="/newpost" class="align_left" > New Post </a>
+      <a href="/blog" class="align_left" >Blog</a>
+      <a href="/newpost" class="align_left" >New Post</a>
 
       {% if session['username'] %}
-        <a class="align_right" href="/logout" > Logout </a>
+        <a class="align_right" href="/logout" >Logout</a>
       {% else %}
-        <a class="align_right" href="/signup" > Signup </a>
-        <a class="align_right" href="/login" > Login </a>
+        <a class="align_right" href="/signup" >Signup</a>
+        <a class="align_right" href="/login" >Login</a>
       {% endif %}
     </div>
 

@@ -248,7 +248,8 @@ def delete_entry():
 
 @app.route('/')
 def index():
-    return 'index page'
+    users = User.query.all()
+    return render_template('index.html', users=users)
 
 @app.route('/signup', methods=['POST', 'GET'])
 def signup():
