@@ -8,7 +8,7 @@ import string
 app = Flask(__name__)
 app.config['DEBUG'] = True
 # configure it to connect to the database
-# user is build-a-blog, database is named build-a-blog, password is constructable
+# user is blogz, database is named blogz, password is xylophone
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://blogz:xylophone@localhost:8889/blogz'
 app.config['SQLALCHEMY_ECHO'] = True
 # create a reference to database and its methods
@@ -161,6 +161,16 @@ def signup_validation():
     else:
         return [u_error, p_error, pv_error, e_error, u_candidate, e_candidate]
 
+# restrict access by requiring login
+@app.before_request
+def require_login():
+    allowed_routes = ['login', 'signup', 'blog', 'individual_entry', 'index']
+    # must include "and '/static/' not in request.path" in conditional to allow
+    # CSS files to be requested. Ask about possible vulnerabilities.
+    if request.endpoint not in allowed_routes and 'username' not in session and '/static/' not in request.path:
+        flash('You must log in first.')
+        return redirect('/login')
+
 # define your request handlers, one for each page
     # include any logic, say for validation or updating the database
     # return rendered templates or redirect. Don't forget to return!
@@ -205,13 +215,10 @@ def blog():
         # took way to long to figure out. Apparently you have to order a select
         # before you filter it? No idea. Could swear I tried that.
     entries = Blog.query.order_by(desc(Blog.id)).filter_by(visible=True).all()
-    # entries = []
 
     return render_template('blog.html',
     title="Your Blog Name Here!",
     entries=entries)
-
-    #return '<h1> display all blog posts here </h1>'
 
 @app.route('/entry')
 def individual_entry():
