@@ -304,9 +304,11 @@ def login():
         username = request.form['username']
         password = request.form['password']
         user = User.query.filter_by(username=username).first()
+
+        # if user exists (is not NoneType) and the password is correct
         if user and user.password == password:
             session['username'] = username
-            flash("Logged in")
+            flash(username + " logged in")
             return redirect('/newpost')
         else:
             if not user:
@@ -320,6 +322,12 @@ def login():
 
     return render_template('login.html')
 
-# don't forget to run the fucking app (only if __name__ == "__main__")
+@app.route('/logout')
+def logout():
+    flash(session['username'] + " logged out")
+    del session['username']
+    return redirect('/blog')
+
+# run the app (only if __name__ == "__main__")
 if __name__ == '__main__':
     app.run()

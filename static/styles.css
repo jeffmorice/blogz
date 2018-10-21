@@ -107,6 +107,18 @@ a, h3, p, input[type="text"], textarea, label {
   height: 431px;
 }
 
+.align_right {
+  float: right;
+  /* right: 0px; */
+  /* padding: 10px; */
+  margin-right: 5px;
+}
+
+.align_left {
+  float: left;
+  margin-left: 5px;
+}
+
 #topbar {
   height: 62px; /* Set the height of the topbar */
   width: 100%; /* Full-height: remove this if you want "auto" width */
@@ -129,11 +141,9 @@ a, h3, p, input[type="text"], textarea, label {
 }
 
 #topbar a {
-    float: left;
     color: #fffac2;
     text-align: center;
     padding: 14px 16px;
-    margin-left: 5px;
     text-decoration: none;
     font-size: 17px;
     border: 2px solid #7d2a40;

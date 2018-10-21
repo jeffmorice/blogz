@@ -7,9 +7,27 @@
   </head>
   <body>
     <div id='topbar'>
-      <a href="/blog" > Blog </a>
-      <a href="/newpost" > New Post </a>
+      <a href="/blog" class="align_left" > Blog </a>
+      <a href="/newpost" class="align_left" > New Post </a>
+
+      {% if session['username'] %}
+        <a class="align_right" href="/logout" > Logout </a>
+      {% else %}
+        <a class="align_right" href="/signup" > Signup </a>
+        <a class="align_right" href="/login" > Login </a>
+      {% endif %}
     </div>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    <!-- create a "flash tray" which appears under the nav bar  -->
+      <div>
+        <ul>
+          {% for category,message in messages %}
+              <h2 class="{{category}}">{{message}}</h2>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endwith %}
 
     {% block content %}
     {% endblock %}
