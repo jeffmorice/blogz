@@ -107,6 +107,7 @@ def validate_email():
 
     if e_candidate == '':
         email_error = ''
+        e_candidate = None
     elif ' ' in e_candidate:
         email_error = 'cannot contain spaces.'
     elif len(e_candidate) < 3 or len(e_candidate) > 254:
@@ -274,14 +275,21 @@ def signup():
             password = user_data[1]
             email = user_data[2]
 
-            # Check if user already exists
+            # Checks if user already exists with username or email.
+            # Assigns a User object
             existing_username = User.query.filter_by(username=username).first()
+            # Assigns a User object
             existing_email = User.query.filter_by(email=email).first()
+            # Assigns the email of the User object. If null, will assign null and
+            # therefore pass the first IF statement. If it has a value, it will not pass.
+            existing_email = existing_email.email
+
             if not existing_username and not existing_email:
                 new_user = User(username, password, email)
                 db.session.add(new_user)
                 db.session.commit()
                 session['username'] = username
+                flash('Welcome, ' + username + '!')
                 return redirect('/newpost')
             else:
                 username_error = ''
