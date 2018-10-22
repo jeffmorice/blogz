@@ -37,6 +37,8 @@ class User(db.Model):
     username = db.Column(db.String(32), unique=True)
     password = db.Column(db.String(32))
     email = db.Column(db.String(120), unique=True)       # change to accept emails of up to 254 characters in length
+    # So apparently "backref='owner'" allows you to access properties of the user
+    # through any Blog object: Blog_object.owner.username
     blogs = db.relationship('Blog', backref='owner')
 
     def __init__(self, username, password, email):
@@ -211,10 +213,16 @@ def newpost():
 
 @app.route('/blog')
 def blog():
-    # assigns a list of objects of class 'Blog' to 'entries' variable
-        # took way to long to figure out. Apparently you have to order a select
-        # before you filter it? No idea. Could swear I tried that.
-    entries = Blog.query.order_by(desc(Blog.id)).filter_by(visible=True).all()
+    user_id = request.args.get('user')
+
+    # if there is a query
+    if user_id:
+        entries = Blog.query.order_by(desc(Blog.id)).filter_by(owner_id=user_id).all()
+    else:
+        # assigns a list of objects of class 'Blog' to 'entries' variable
+            # took way to long to figure out. Apparently you have to order a select
+            # before you filter it? No idea. Could swear I tried that.
+        entries = Blog.query.order_by(desc(Blog.id)).filter_by(visible=True).all()
 
     return render_template('blog.html',
     title="Your Blog Name Here!",

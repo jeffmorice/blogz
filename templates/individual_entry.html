@@ -4,6 +4,7 @@
         <article>
             <div>
                 <h3 class="color1">{{entry.title}}</h3>
+                <h4>by <a href='/blog?user={{entry.owner.id}}'>{{entry.owner.username}}</a></h4>
                 <p class="postbody">{{entry.body}}</p>
             </div>
         </article>

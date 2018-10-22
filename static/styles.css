@@ -22,7 +22,11 @@ article {
   box-sizing: border-box;
 }
 
-a:link, label {
+label, h4 {
+    color: #7d2a40;
+}
+
+a:link, {
     color: #7d2a40;
     text-decoration: underline;
 }
@@ -79,7 +83,7 @@ input[type=submit] {
   background-color: #fffac2;
 }
 
-a, h3, p, input[type="text"], textarea, label {
+a, h3, h4, p, input[type="text"], textarea, label {
   font-family: "Verdana";
 }
 
