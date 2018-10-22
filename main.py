@@ -167,11 +167,14 @@ def signup_validation():
 @app.before_request
 def require_login():
     allowed_routes = ['login', 'signup', 'blog', 'individual_entry', 'index']
+    logged_in_routes = ['login', 'signup']
     # must include "and '/static/' not in request.path" in conditional to allow
     # CSS files to be requested. Ask about possible vulnerabilities.
     if request.endpoint not in allowed_routes and 'username' not in session and '/static/' not in request.path:
         flash('You must log in first.')
         return redirect('/login')
+    elif 'username' in session and request.endpoint in logged_in_routes:
+        return redirect('/blog')
 
 # define your request handlers, one for each page
     # include any logic, say for validation or updating the database
