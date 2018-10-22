@@ -338,7 +338,7 @@ def login():
         else:
             if not user:
                 username_error = 'User does not exist.'
-            elif user.password != password:
+            elif not check_pw_hash(password, user.pw_hash):
                 password_error = 'Password is incorrect.'
             return render_template('login.html',
             username=username,
