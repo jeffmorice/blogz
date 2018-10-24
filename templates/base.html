@@ -18,14 +18,16 @@
       {% endif %}
     </div>
 
+
     {% with messages = get_flashed_messages(with_categories=True) %}
     <!-- create a "flash tray" which appears under the nav bar  -->
       <div>
-        <ul>
+
+
           {% for category,message in messages %}
-              <h2 class="{{category}}">{{message}}</h2>
+              <p id='flash_tray' class="{{category}}">{{message}}</p>
           {% endfor %}
-        </ul>
+
       </div>
     {% endwith %}
 

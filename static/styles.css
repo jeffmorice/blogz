@@ -2,6 +2,7 @@ body {
   background-color: #7d2a40;
   margin: 0px;
   padding-top: 62px;
+  font-family: "Verdana";
 }
 
 article {
@@ -84,11 +85,15 @@ input[type=submit] {
 }
 
 a, h3, h4, p, input[type="text"], textarea, label {
-  font-family: "Verdana";
+}
+
+ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .error {
-  color: red;
+  color: #ff2146;
 }
 
 .color1 {
@@ -145,7 +150,7 @@ a, h3, h4, p, input[type="text"], textarea, label {
   box-sizing: border-box;
   /* border: 1px solid red; */
   background-color: #c25655;
-  box-shadow: 0px 15px #7d2a40;
+  /* box-shadow: 0px 15px #7d2a40; */
 }
 
 #topbar a {
@@ -156,4 +161,18 @@ a, h3, h4, p, input[type="text"], textarea, label {
     font-size: 17px;
     border: 2px solid #7d2a40;
     box-sizing: border-box;
+}
+
+#flash_tray {
+  padding-top: 5px;
+  padding-left: 22px;
+  padding-bottom: 5px;
+
+  margin: 0px;
+
+  /* border: 1px solid red; */
+  /*Include padding and border in the element's total width and height*/
+  box-sizing: border-box;
+  color: #fffac2;
+  background-color: #3d0710;
 }
