@@ -3,13 +3,17 @@
 {% block content%}
 
   <div class='center_vert'>
-    <div class="solid">
-      <h1> Sign Up </h1>
-    </div>
-    <div class="solid">
+    <div id='login'>
       <form method='POST'>
         <table>
           <tbody>
+            <tr>
+                <td>
+                  <h1>Sign up</h1>
+                  <br>
+                  <br>
+                </td>
+            </tr>
             <tr>
               <td>
                 <label for="username"> Username </label>
@@ -19,6 +23,8 @@
             <tr>
               <td>
                 <input id="username" type='text' name='username' value={{u_candidate}}>
+                <br>
+                <br>
               </td>
             </tr>
             <tr>
@@ -32,6 +38,8 @@
             <tr>
               <td>
                 <input id="password" type='password' name='password'>
+                <br>
+                <br>
               </td>
             </tr>
             <tr>
@@ -45,6 +53,8 @@
             <tr>
               <td>
                 <input id="password_verified" type='password' name='password_verified'>
+                <br>
+                <br>
               </td>
             </tr>
             <tr>
@@ -58,6 +68,8 @@
             <tr>
               <td>
                 <input id="email" type='text' name='email' value={{e_candidate}}>
+                <br>
+                <br>
               </td>
             </tr>
             <tr>

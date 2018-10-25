@@ -3,6 +3,7 @@ body {
   margin: 0px;
   padding-top: 62px;
   font-family: "Verdana";
+  color: #7d2a40;
 }
 
 article {
@@ -50,6 +51,10 @@ a:active {
     text-decoration: none;
 }
 
+h1 {
+  margin: 0px;
+}
+
 h3 {
   margin-top: 0px;
   margin-bottom: 15px;
@@ -70,18 +75,34 @@ p {
   background-color: #fffac2;
 }
 
-input[type=text], textarea {
+textarea {
   width: 100%;
-  background-color: #fffac2;
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
   box-sizing: border-box;
+  color: #7d2a40;
+}
+
+input[type=text], input[type="password"], input[type=submit] {
+
+  background-color: #fffac2;
+  box-sizing: border-box;
+  border: 0px solid red;
+  color: #7d2a40;
+  font-size:14px
+}
+
+input[type="text"], input[type="password"] {
+  padding: 15px;
+  width: 450px;
 }
 
 input[type=submit] {
-  background-color: #fffac2;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
 }
 
 a, h3, h4, p, input[type="text"], textarea, label {
@@ -90,6 +111,10 @@ a, h3, h4, p, input[type="text"], textarea, label {
 ul {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+td {
+  padding: 0px;
 }
 
 .error {
@@ -102,7 +127,7 @@ ul {
 
 .solid {
   background-color: #B8D8D8;
-  box-shadow: 10px 10px #4F6367;
+  /* box-shadow: 10px 10px #4F6367; */
 }
 
 .center_vert {
@@ -113,7 +138,7 @@ ul {
   bottom: 0;
   left: 0;
   width: 510px;
-  height: 431px;
+  /* height: 431px; */
 }
 
 .align_right {
@@ -175,4 +200,14 @@ ul {
   box-sizing: border-box;
   color: #fffac2;
   background-color: #3d0710;
+}
+
+#login {
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  box-sizing: border-box;
+  background-color: #f69b78;
+  margin-top: 91px;
 }
