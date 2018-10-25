@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 
-{% block content %}
-    <ul>
-    {% for user in users %}
-    <li> <a href="/">{{user.username}}</a> </li>
-    {% endfor %}
-  </ul>
-{% endblock %}
+
+  {% block content %}
+    <article>
+      <ul>
+      {% for user in users %}
+        <li> <a href="/">{{user.username}}</a> </li>
+      {% endfor %}
+      </ul>
+    </article>
+  {% endblock %}
