@@ -28,7 +28,7 @@ label, h4 {
     color: #7d2a40;
 }
 
-a:link, {
+a:link {
     color: #7d2a40;
     text-decoration: underline;
 }
@@ -215,4 +215,11 @@ td {
   box-sizing: border-box;
   background-color: #f69b78;
   margin-top: 91px;
+}
+
+#userlist {
+  /* display: inline;
+  width: 500px; */
+  margin-left: 30%;
+  margin-right: 30%;
 }
