@@ -162,6 +162,37 @@ td {
   margin-right: auto;
 }
 
+#flash_tray {
+  padding-top: 5px;
+  padding-left: 22px;
+  padding-bottom: 5px;
+
+  margin: 0px;
+
+  /* border: 1px solid red; */
+  /*Include padding and border in the element's total width and height*/
+  box-sizing: border-box;
+  color: #fffac2;
+  background-color: #3d0710;
+}
+
+#login {
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  box-sizing: border-box;
+  background-color: #f69b78;
+  margin-top: 15px;
+}
+
+#userlist {
+  /* display: inline;
+  width: 500px; */
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
 #topbar {
   height: 62px; /* Set the height of the topbar */
   width: 100%; /* Full-height: remove this if you want "auto" width */
@@ -193,33 +224,14 @@ td {
     box-sizing: border-box;
 }
 
-#flash_tray {
-  padding-top: 5px;
-  padding-left: 22px;
-  padding-bottom: 5px;
-
-  margin: 0px;
-
-  /* border: 1px solid red; */
-  /*Include padding and border in the element's total width and height*/
-  box-sizing: border-box;
-  color: #fffac2;
-  background-color: #3d0710;
+/* mouse over link */
+#topbar a:hover {
+    /* color: #fffcdd; */
+    background-color: #b54e4d;
 }
 
-#login {
-  padding-top: 25px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 25px;
-  box-sizing: border-box;
-  background-color: #f69b78;
-  margin-top: 15px;
-}
-
-#userlist {
-  /* display: inline;
-  width: 500px; */
-  margin-left: 30%;
-  margin-right: 30%;
+/* selected link */
+#topbar a:active {
+    /* color: #cccab1; */
+    background-color: #d05453;
 }
