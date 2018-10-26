@@ -176,9 +176,11 @@ def signup():
                 username_error = ''
                 email_error = ''
 
+                if email == None:
+                    email = ''
                 if existing_username:
                     username_error = 'Username already exists.'
-                if existing_email:
+                if existing_email and email != '':
                     email_error = 'Email Address already exists.'
 
                 return render_template('signup.html',
@@ -192,13 +194,16 @@ def signup():
         # return errors if data is invalid (len == 6)
         elif len(user_data) == 6:
             # user data failed validation
+            email = user_data[5]
+            if email == None:
+                email = ''
             return render_template('signup.html',
             username_error=user_data[0],
             password_error=user_data[1],
             p_verification_error=user_data[2],
             email_error=user_data[3],
             u_candidate=user_data[4],
-            e_candidate=user_data[5])
+            e_candidate=email)
 
     return render_template('signup.html')
 
